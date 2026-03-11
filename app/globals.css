@@ -387,21 +387,7 @@
     padding-right: 5%;
   }
 
-  /* ── Sticky process cards — Webflow: .work-process-card ── */
-  .sticky-card {
-    margin-bottom: 16px;
-  }
-
-  @media (min-width: 768px) {
-    .sticky-card {
-      position: sticky;
-      margin-bottom: 12px;
-    }
-    .sticky-card:nth-child(1) { top: 80px; }
-    .sticky-card:nth-child(2) { top: 110px; }
-    .sticky-card:nth-child(3) { top: 140px; }
-    .sticky-card:nth-child(4) { top: 170px; }
-  }
+  /* ── Step cards ── */
 }
 
 /* ── Animations ───────────────────────────────────────── */
