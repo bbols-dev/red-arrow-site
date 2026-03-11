@@ -1,4 +1,7 @@
 import PlusIcons from "./PlusIcons";
+import HealthGauge from "./HealthGauge";
+import MockWindowChrome from "./MockWindowChrome";
+import SeverityBadges from "./SeverityBadges";
 
 export default function Hero() {
   return (
@@ -11,57 +14,55 @@ export default function Hero() {
       {/* Decorative glass rings */}
       <div className="hidden lg:block glass-ring w-[300px] h-[300px] top-[100px] right-[5%] opacity-15 animate-float-slow" />
       <div className="hidden lg:block glass-ring w-[80px] h-[80px] top-[60%] left-[12%] opacity-20" />
-      <div className="hidden lg:block glass-ring w-[50px] h-[50px] top-[30%] left-[35%] opacity-25 animate-float" />
 
-      {/* ── Small floating glass accents ── */}
-      <div className="hidden lg:block absolute top-[280px] left-[52%] w-[100px] h-[100px] glass-surface rounded-2xl rotate-12 animate-float opacity-40 pointer-events-none" />
-      <div className="hidden lg:block absolute bottom-[180px] left-[48%] w-[60px] h-[60px] glass-surface rounded-xl -rotate-6 animate-float-slow opacity-30 pointer-events-none" />
-
-      {/* ── Floating glass dashboard card ── */}
-      <div className="hidden lg:block absolute top-[180px] right-[8%] w-[280px] glass-card overflow-hidden p-6 animate-float opacity-90 pointer-events-none">
+      {/* ── Floating dashboard preview panel ── */}
+      <div className="hidden lg:block absolute top-[170px] right-[6%] w-[340px] glass-card overflow-hidden animate-float opacity-90 pointer-events-none">
         <PlusIcons corners={["top-right", "bottom-left"]} />
-        {/* Circle decoration */}
-        <div className="circle-decoration deco-green w-[140px] h-[140px] -bottom-[40px] -right-[40px]" />
+        <div className="circle-decoration deco-secondary w-[160px] h-[160px] -bottom-[50px] -right-[50px]" />
 
-        <div className="flex items-center gap-3 mb-3 relative z-[2]">
-          <div className="w-8 h-8 rounded-lg bg-primary-bg flex items-center justify-center">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9544D" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <MockWindowChrome title="SuitProof">
+          <div className="p-5 space-y-4 relative z-[2]">
+            {/* Health score + severity row */}
+            <div className="flex items-center gap-4">
+              <div className="relative flex-shrink-0">
+                <HealthGauge score={34} size={72} />
+              </div>
+              <div className="space-y-1.5">
+                <span className="text-[10px] font-bold text-text-tertiary/60 tracking-widest uppercase block">
+                  Health Score
+                </span>
+                <SeverityBadges critical={4} high={2} medium={3} />
+              </div>
+            </div>
+
+            {/* Brief snippet */}
+            <div className="glass-surface p-3 rounded-md">
+              <div className="flex items-center gap-1.5 mb-1">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9B8FD4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                <span className="text-[9px] font-semibold text-secondary uppercase tracking-wider">AI Brief</span>
+              </div>
+              <p className="text-[10px] text-text-tertiary leading-relaxed">
+                Four subscription gaps account for half your exposure — three are quick fixes under 5 min each.
+              </p>
+            </div>
+
+            {/* Risk exposure bar */}
+            <div>
+              <div className="flex items-center justify-between mb-1.5">
+                <span className="text-[10px] text-text-secondary font-medium">Total Exposure</span>
+                <span className="text-sm font-semibold tracking-tight">$218K</span>
+              </div>
+              <div className="risk-bar-track">
+                <div
+                  className="risk-bar-fill"
+                  style={{ width: "78%", backgroundColor: "#C9544D" }}
+                />
+              </div>
+            </div>
           </div>
-          <span className="text-xs font-semibold text-primary">4 Lawsuit Risks Found</span>
-        </div>
-        <div className="flex items-baseline gap-2 relative z-[2]">
-          <span className="text-2xl font-semibold tracking-tight">$218K</span>
-          <span className="text-xs text-text-tertiary">estimated exposure</span>
-        </div>
-        {/* Grow bars */}
-        <div className="mt-4 space-y-1.5 relative z-[2]">
-          <div className="grow-bar" style={{ width: "87%" }} />
-          <div className="grow-bar" style={{ width: "62%", opacity: 0.6 }} />
-          <div className="grow-bar" style={{ width: "45%", opacity: 0.4 }} />
-        </div>
-      </div>
-
-      {/* ── Second floating card ── */}
-      <div className="hidden lg:block absolute bottom-[120px] right-[15%] w-[220px] glass-card overflow-hidden p-5 animate-float-slow opacity-80 pointer-events-none">
-        <PlusIcons corners={["top-left", "bottom-right"]} />
-
-        <div className="flex items-center gap-2 mb-2 relative z-[2]">
-          <div className="w-6 h-6 rounded-md bg-green-light flex items-center justify-center">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3DAA64" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <span className="text-xs font-medium">3 Quick Fixes</span>
-        </div>
-        <p className="text-[11px] text-text-tertiary leading-relaxed relative z-[2]">
-          Resolve 60% of risk in under 5 min each
-        </p>
-      </div>
-
-      {/* ── Third floating card (new) — small glass pill ── */}
-      <div className="hidden lg:block absolute top-[380px] right-[3%] glass-pill rounded-xl px-4 py-2.5 animate-float opacity-70 pointer-events-none" style={{ animationDelay: "1s" }}>
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-green animate-pulse-soft" />
-          <span className="text-[11px] font-medium text-text-secondary">Scan running...</span>
-        </div>
+        </MockWindowChrome>
       </div>
 
       <div className="container-main relative">

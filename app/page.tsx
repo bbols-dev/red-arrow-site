@@ -8,6 +8,9 @@ import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import DashboardShowcase from "@/components/DashboardShowcase";
+import RiskCategories from "@/components/RiskCategories";
+import FixRoadmap from "@/components/FixRoadmap";
 
 export default function Home() {
   return (
@@ -17,10 +20,13 @@ export default function Home() {
         <Hero />
         <ThreatTicker />
         <Stats />
+        <DashboardShowcase />
         <Features />
         <HowItWorks />
+        <RiskCategories />
         <Testimonials />
         <Pricing />
+        <FixRoadmap />
         <CTA />
       </main>
       <Footer />

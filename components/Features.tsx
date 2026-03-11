@@ -13,6 +13,7 @@ const FEATURES = [
       </svg>
     ),
     accent: "primary" as const,
+    visual: "crawled-pages",
   },
   {
     num: "02",
@@ -25,6 +26,7 @@ const FEATURES = [
       </svg>
     ),
     accent: "secondary" as const,
+    visual: "severity-bars",
   },
   {
     num: "03",
@@ -37,6 +39,7 @@ const FEATURES = [
       </svg>
     ),
     accent: "green" as const,
+    visual: "progress",
   },
   {
     num: "04",
@@ -49,6 +52,7 @@ const FEATURES = [
       </svg>
     ),
     accent: "primary" as const,
+    visual: "enforcement",
   },
   {
     num: "05",
@@ -61,6 +65,7 @@ const FEATURES = [
       </svg>
     ),
     accent: "secondary" as const,
+    visual: "brief",
   },
   {
     num: "06",
@@ -73,6 +78,7 @@ const FEATURES = [
       </svg>
     ),
     accent: "green" as const,
+    visual: "scan-types",
   },
 ];
 
@@ -96,6 +102,110 @@ const ACCENT_COLORS = {
     circle: "deco-green",
   },
 };
+
+function FeatureVisual({ type }: { type: string }) {
+  switch (type) {
+    case "crawled-pages":
+      return (
+        <div className="mt-4 glass-surface rounded-md p-2.5 space-y-1.5">
+          {[
+            { url: "/products/vitamin-d3", ok: true },
+            { url: "/policies/privacy", ok: false },
+            { url: "/cart", ok: true },
+          ].map((page) => (
+            <div key={page.url} className="flex items-center gap-2">
+              {page.ok ? (
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#3DAA64" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              ) : (
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#C9544D" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              )}
+              <span className="text-[10px] text-text-tertiary font-mono">{page.url}</span>
+            </div>
+          ))}
+        </div>
+      );
+
+    case "severity-bars":
+      return (
+        <div className="mt-4 space-y-1.5">
+          {[
+            { label: "Critical", w: "75%", color: "#C9544D" },
+            { label: "High", w: "50%", color: "#E88D3F" },
+            { label: "Medium", w: "30%", color: "#888888" },
+          ].map((bar) => (
+            <div key={bar.label} className="flex items-center gap-2">
+              <span className="text-[9px] text-text-tertiary w-10">{bar.label}</span>
+              <div className="risk-bar-track flex-1">
+                <div className="risk-bar-fill" style={{ width: bar.w, backgroundColor: bar.color }} />
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+
+    case "progress":
+      return (
+        <div className="mt-4 glass-surface rounded-md p-2.5">
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-[10px] font-medium text-text-secondary">4 of 9 fixed</span>
+            <span className="text-[10px] font-semibold text-green">44%</span>
+          </div>
+          <div className="risk-bar-track">
+            <div className="risk-bar-fill" style={{ width: "44%", backgroundColor: "#3DAA64" }} />
+          </div>
+        </div>
+      );
+
+    case "enforcement":
+      return (
+        <div className="mt-4 glass-surface rounded-md p-2.5">
+          <div className="flex items-center gap-1.5 mb-1">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#C9544D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span className="text-[10px] font-semibold">Murphy v. Eyebobs LLC</span>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="text-[10px] text-primary font-medium">$85K settled</span>
+            <span className="text-[9px] text-text-tertiary">CCPA · Jan 2025</span>
+          </div>
+        </div>
+      );
+
+    case "brief":
+      return (
+        <div className="mt-4 glass-surface rounded-md p-2.5">
+          <div className="flex items-center gap-1.5 mb-1">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#9B8FD4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            <span className="text-[9px] font-semibold text-secondary uppercase tracking-wider">AI Brief</span>
+          </div>
+          <p className="text-[10px] text-text-tertiary leading-relaxed">
+            Three subscription gaps drive 45% of exposure. Fix the cancellation flow first...
+          </p>
+        </div>
+      );
+
+    case "scan-types":
+      return (
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {[
+            { label: "Quick", time: "5 min" },
+            { label: "Full", time: "15 min" },
+            { label: "Deep", time: "30 min" },
+          ].map((scan) => (
+            <div key={scan.label} className="glass-pill rounded-full px-2.5 py-1">
+              <span className="text-[10px] font-medium text-text-secondary">
+                {scan.label} · {scan.time}
+              </span>
+            </div>
+          ))}
+        </div>
+      );
+
+    default:
+      return null;
+  }
+}
 
 export default function Features() {
   return (
@@ -157,6 +267,7 @@ export default function Features() {
                   <p className="text-sm text-text-secondary leading-relaxed">
                     {f.description}
                   </p>
+                  <FeatureVisual type={f.visual} />
                 </div>
               </div>
             );
