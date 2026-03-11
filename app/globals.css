@@ -391,12 +391,12 @@
   @media (min-width: 768px) {
     .sticky-card {
       position: sticky;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
-    .sticky-card:nth-child(1) { top: 120px; }
-    .sticky-card:nth-child(2) { top: 180px; }
-    .sticky-card:nth-child(3) { top: 240px; }
-    .sticky-card:nth-child(4) { top: 300px; }
+    .sticky-card:nth-child(1) { top: 100px; }
+    .sticky-card:nth-child(2) { top: 140px; }
+    .sticky-card:nth-child(3) { top: 180px; }
+    .sticky-card:nth-child(4) { top: 220px; }
   }
 }
 
