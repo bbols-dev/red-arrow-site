@@ -113,99 +113,104 @@ export default function Pricing() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-[1080px] mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1080px] mx-auto items-start pt-6">
           {PLANS.map((plan) => (
             <div
               key={plan.name}
-              className={`relative overflow-hidden p-8 transition-all duration-300 ${
-                plan.popular
-                  ? "rounded-[var(--radius-card)] bg-gradient-to-br from-primary to-primary-light text-white shadow-2xl shadow-primary/20 scale-[1.03] z-10"
-                  : "glass-card glass-mesh"
-              }`}
+              className={`relative ${plan.popular ? "md:scale-[1.03] z-10" : ""}`}
             >
-              {/* Plus icons */}
-              {!plan.popular && (
-                <PlusIcons corners={["top-right", "bottom-left"]} />
-              )}
+              {/* Badge sits OUTSIDE the overflow-hidden card */}
               {plan.popular && (
-                <>
-                  {/* Glass shapes inside popular card */}
-                  <div className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full bg-white/[0.08] -translate-y-1/3 translate-x-1/3 pointer-events-none" />
-                  <div className="absolute bottom-0 left-0 w-[150px] h-[150px] rounded-full bg-white/[0.08] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
-                  <div className="absolute top-[40%] right-[10%] w-[80px] h-[80px] rounded-full bg-white/[0.04] pointer-events-none" />
-                  <PlusIcons corners={["top-right", "bottom-left"]} className="text-white opacity-20" />
-                </>
-              )}
-
-              {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green text-white text-xs font-semibold px-4 py-1 rounded-full shadow-lg">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-green text-white text-xs font-semibold px-4 py-1 rounded-full shadow-lg z-20">
                   Most Popular
                 </div>
               )}
 
-              <div className="relative z-[2]">
-                <h3 className="text-lg font-semibold mb-1">{plan.name}</h3>
-                <p
-                  className={`text-sm mb-6 ${plan.popular ? "text-white/70" : "text-text-tertiary"}`}
-                >
-                  {plan.description}
-                </p>
+              <div
+                className={`relative p-8 h-full transition-all duration-300 ${
+                  plan.popular
+                    ? "rounded-[var(--radius-card)] bg-gradient-to-br from-primary to-primary-light text-white shadow-2xl shadow-primary/20 overflow-hidden"
+                    : "glass-card glass-mesh"
+                }`}
+              >
+                {/* Plus icons */}
+                {!plan.popular && (
+                  <PlusIcons corners={["top-right", "bottom-left"]} />
+                )}
+                {plan.popular && (
+                  <>
+                    {/* Glass shapes inside popular card */}
+                    <div className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full bg-white/[0.08] -translate-y-1/3 translate-x-1/3 pointer-events-none" />
+                    <div className="absolute bottom-0 left-0 w-[150px] h-[150px] rounded-full bg-white/[0.08] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+                    <div className="absolute top-[40%] right-[10%] w-[80px] h-[80px] rounded-full bg-white/[0.04] pointer-events-none" />
+                    <PlusIcons corners={["top-right", "bottom-left"]} className="text-white opacity-20" />
+                  </>
+                )}
 
-                <div className="mb-6">
-                  {plan.monthlyPrice ? (
-                    <>
+                <div className="relative z-[2]">
+                  <h3 className="text-lg font-semibold mb-1">{plan.name}</h3>
+                  <p
+                    className={`text-sm mb-6 ${plan.popular ? "text-white/70" : "text-text-tertiary"}`}
+                  >
+                    {plan.description}
+                  </p>
+
+                  <div className="mb-6">
+                    {plan.monthlyPrice ? (
+                      <>
+                        <span className="text-4xl font-semibold tracking-tight">
+                          ${annual ? plan.annualPrice : plan.monthlyPrice}
+                        </span>
+                        <span
+                          className={`text-sm ${plan.popular ? "text-white/60" : "text-text-tertiary"}`}
+                        >
+                          /month
+                        </span>
+                      </>
+                    ) : (
                       <span className="text-4xl font-semibold tracking-tight">
-                        ${annual ? plan.annualPrice : plan.monthlyPrice}
+                        Custom
                       </span>
-                      <span
-                        className={`text-sm ${plan.popular ? "text-white/60" : "text-text-tertiary"}`}
-                      >
-                        /month
-                      </span>
-                    </>
-                  ) : (
-                    <span className="text-4xl font-semibold tracking-tight">
-                      Custom
-                    </span>
-                  )}
+                    )}
+                  </div>
+
+                  {/* Glass divider */}
+                  <div className={`glass-line mb-6 ${plan.popular ? "opacity-30" : "opacity-60"}`} />
+
+                  <ul className="space-y-3 mb-8">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2.5 text-sm">
+                        <svg
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className={`mt-0.5 shrink-0 ${plan.popular ? "text-green-300" : "text-green"}`}
+                        >
+                          <path d="M20 6 9 17l-5-5" />
+                        </svg>
+                        <span className={plan.popular ? "text-white/90" : ""}>
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a
+                    href="#"
+                    className={`btn w-full text-center text-xs ${
+                      plan.popular
+                        ? "bg-white text-primary hover:bg-white/90 shadow-lg"
+                        : "btn-primary"
+                    }`}
+                  >
+                    {plan.cta}
+                  </a>
                 </div>
-
-                {/* Glass divider */}
-                <div className={`glass-line mb-6 ${plan.popular ? "opacity-30" : "opacity-60"}`} />
-
-                <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2.5 text-sm">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className={`mt-0.5 shrink-0 ${plan.popular ? "text-green-300" : "text-green"}`}
-                      >
-                        <path d="M20 6 9 17l-5-5" />
-                      </svg>
-                      <span className={plan.popular ? "text-white/90" : ""}>
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href="#"
-                  className={`btn w-full text-center text-xs ${
-                    plan.popular
-                      ? "bg-white text-primary hover:bg-white/90 shadow-lg"
-                      : "btn-primary"
-                  }`}
-                >
-                  {plan.cta}
-                </a>
               </div>
             </div>
           ))}

@@ -1,5 +1,4 @@
 import PlusIcons from "./PlusIcons";
-import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -24,18 +23,6 @@ export default function Hero() {
         {/* Circle decoration */}
         <div className="circle-decoration deco-green w-[140px] h-[140px] -bottom-[40px] -right-[40px]" />
 
-        {/* SVG illustration watermark */}
-        <div className="glass-icon-wrap top-[8px] right-[8px] w-[80px] h-[80px]">
-          <Image
-            src="/illustrations/bar-chart.svg"
-            alt=""
-            width={80}
-            height={80}
-            className="w-full h-full object-contain"
-            aria-hidden="true"
-          />
-        </div>
-
         <div className="flex items-center gap-3 mb-3 relative z-[2]">
           <div className="w-8 h-8 rounded-lg bg-primary-bg flex items-center justify-center">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9544D" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -57,18 +44,6 @@ export default function Hero() {
       {/* ── Second floating card ── */}
       <div className="hidden lg:block absolute bottom-[120px] right-[15%] w-[220px] glass-card overflow-hidden p-5 animate-float-slow opacity-80 pointer-events-none">
         <PlusIcons corners={["top-left", "bottom-right"]} />
-
-        {/* SVG illustration watermark */}
-        <div className="glass-icon-wrap -bottom-[5px] -right-[5px] w-[70px] h-[70px]">
-          <Image
-            src="/illustrations/growth.svg"
-            alt=""
-            width={70}
-            height={70}
-            className="w-full h-full object-contain"
-            aria-hidden="true"
-          />
-        </div>
 
         <div className="flex items-center gap-2 mb-2 relative z-[2]">
           <div className="w-6 h-6 rounded-md bg-green-light flex items-center justify-center">

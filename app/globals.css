@@ -163,20 +163,6 @@
     transform: translateY(-3px);
   }
 
-  /* ── Glass icon container — for SVG illustration backgrounds ── */
-  .glass-icon-wrap {
-    position: absolute;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.06;
-    transition: opacity 0.35s ease;
-  }
-
-  .group:hover .glass-icon-wrap,
-  *:hover > .glass-icon-wrap {
-    opacity: 0.1;
-  }
-
   /* ── Glass mesh — subtle grid overlay ── */
   .glass-mesh {
     position: relative;

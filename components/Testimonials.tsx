@@ -81,7 +81,7 @@ export default function Testimonials() {
           {TESTIMONIALS.map((t) => (
             <div
               key={t.name}
-              className={`relative overflow-hidden p-8 flex flex-col ${
+              className={`p-8 flex flex-col ${
                 t.featured
                   ? "feature-card-solid glass-shimmer"
                   : "glass-card glass-shimmer"

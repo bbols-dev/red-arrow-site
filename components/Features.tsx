@@ -1,5 +1,4 @@
 import PlusIcons from "./PlusIcons";
-import Image from "next/image";
 
 const FEATURES = [
   {
@@ -13,7 +12,6 @@ const FEATURES = [
         <path d="M10 21h4"/>
       </svg>
     ),
-    illustration: "/illustrations/crosshair.svg",
     accent: "primary" as const,
   },
   {
@@ -26,7 +24,6 @@ const FEATURES = [
         <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
       </svg>
     ),
-    illustration: "/illustrations/bar-chart.svg",
     accent: "secondary" as const,
   },
   {
@@ -39,7 +36,6 @@ const FEATURES = [
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
       </svg>
     ),
-    illustration: "/illustrations/starburst.svg",
     accent: "green" as const,
   },
   {
@@ -52,7 +48,6 @@ const FEATURES = [
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
       </svg>
     ),
-    illustration: "/illustrations/circle-frame.svg",
     accent: "primary" as const,
   },
   {
@@ -65,7 +60,6 @@ const FEATURES = [
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
       </svg>
     ),
-    illustration: "/illustrations/document.svg",
     accent: "secondary" as const,
   },
   {
@@ -78,7 +72,6 @@ const FEATURES = [
         <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
       </svg>
     ),
-    illustration: "/illustrations/globe.svg",
     accent: "green" as const,
   },
 ];
@@ -141,25 +134,13 @@ export default function Features() {
             return (
               <div
                 key={f.num}
-                className="group feature-card-solid glass-shimmer relative overflow-hidden p-7 min-h-[260px]"
+                className="group feature-card-solid glass-shimmer p-7 min-h-[260px]"
               >
                 {/* Plus icons at corners */}
                 <PlusIcons corners={["top-right", "bottom-left"]} className="opacity-10" />
 
                 {/* Circle decoration */}
                 <div className={`circle-decoration ${colors.circle} w-[200px] h-[200px] -bottom-[60px] -right-[60px]`} />
-
-                {/* SVG illustration watermark */}
-                <div className="glass-icon-wrap -bottom-[20px] -right-[20px] w-[180px] h-[180px]">
-                  <Image
-                    src={f.illustration}
-                    alt=""
-                    width={180}
-                    height={180}
-                    className="w-full h-full object-contain"
-                    aria-hidden="true"
-                  />
-                </div>
 
                 <div className="relative z-[2]">
                   <div className="flex items-start justify-between mb-5">

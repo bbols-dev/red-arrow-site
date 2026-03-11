@@ -1,5 +1,4 @@
 import PlusIcons from "./PlusIcons";
-import Image from "next/image";
 
 const STATS = [
   {
@@ -9,7 +8,6 @@ const STATS = [
     accent: "text-primary",
     circle: "deco-primary",
     barWidth: "85%",
-    illustration: "/illustrations/crosshair.svg",
   },
   {
     value: "$200K+",
@@ -18,7 +16,6 @@ const STATS = [
     accent: "text-secondary",
     circle: "deco-secondary",
     barWidth: "90%",
-    illustration: "/illustrations/bar-chart.svg",
   },
   {
     value: "~35%",
@@ -27,7 +24,6 @@ const STATS = [
     accent: "text-green",
     circle: "deco-green",
     barWidth: "35%",
-    illustration: "/illustrations/starburst.svg",
   },
   {
     value: "5 min",
@@ -36,7 +32,6 @@ const STATS = [
     accent: "text-primary",
     circle: "deco-primary",
     barWidth: "50%",
-    illustration: "/illustrations/browser.svg",
   },
 ];
 
@@ -67,25 +62,13 @@ export default function Stats() {
           {STATS.map((stat) => (
             <div
               key={stat.label}
-              className="glass-card glass-shimmer relative overflow-hidden p-6 md:p-7"
+              className="glass-card glass-shimmer p-6 md:p-7"
             >
               {/* Plus icon corners */}
               <PlusIcons corners={["top-right"]} />
 
               {/* Circle decoration */}
               <div className={`circle-decoration ${stat.circle} w-[160px] h-[160px] -bottom-[50px] -right-[50px]`} />
-
-              {/* SVG illustration watermark */}
-              <div className="glass-icon-wrap -bottom-[15px] -right-[15px] w-[100px] h-[100px]">
-                <Image
-                  src={stat.illustration}
-                  alt=""
-                  width={100}
-                  height={100}
-                  className="w-full h-full object-contain"
-                  aria-hidden="true"
-                />
-              </div>
 
               <div className="relative z-[2]">
                 <div className={`text-3xl md:text-4xl font-semibold tracking-tight mb-2 ${stat.accent}`}>
