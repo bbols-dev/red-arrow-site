@@ -76,15 +76,15 @@ export default function Hero() {
 
           {/* Headline */}
           <h1 className="text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.08] font-medium tracking-tight mb-6 animate-fade-up animate-delay-1 opacity-0">
-            Serial plaintiffs are{" "}
-            <span className="font-accent">already browsing your store</span>
+            The fastest way to{" "}
+            <span className="font-accent">lawsuit-proof your store</span>
           </h1>
 
           {/* Subhead */}
           <p className="text-lg text-text-secondary max-w-[530px] mb-10 animate-fade-up animate-delay-2 opacity-0">
-            ADA lawsuits. Privacy demand letters. FTC complaints. They target
-            Shopify stores with easy-to-find violations. We find them first —
-            and tell you exactly what to fix before they do.
+            ADA demand letters cost Shopify brands $10K–$150K to settle.
+            SuitProof finds the compliance gaps before plaintiff attorneys
+            do — and shows you exactly what to fix.
           </p>
 
           {/* CTAs */}

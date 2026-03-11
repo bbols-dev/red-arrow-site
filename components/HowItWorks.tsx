@@ -49,7 +49,7 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative py-[var(--section-padding)] overflow-clip">
+    <section id="how-it-works" className="relative py-20 md:py-24 overflow-clip">
       {/* Background orbs */}
       <div className="orb orb-secondary w-[400px] h-[400px] top-[20%] -right-[100px]" />
       <div className="orb orb-primary w-[300px] h-[300px] bottom-[20%] -left-[80px]" />
@@ -60,7 +60,7 @@ export default function HowItWorks() {
 
       <div className="container-main relative">
         {/* Section header */}
-        <div className="text-center max-w-[600px] mx-auto mb-14">
+        <div className="text-center max-w-[600px] mx-auto mb-10">
           <div className="inline-flex items-center gap-2 glass-pill rounded-[var(--radius-pill)] px-4 py-1.5 mb-6 mx-auto">
             <span className="text-xs font-medium tracking-wider uppercase text-primary">
               How It Works
@@ -75,7 +75,7 @@ export default function HowItWorks() {
         {/* Sticky card stack */}
         <div className="max-w-[720px] mx-auto">
           {STEPS.map((step) => (
-            <div key={step.num} className="sticky-card glass-card glass-mesh relative overflow-hidden p-8 md:p-10">
+            <div key={step.num} className="sticky-card glass-card glass-mesh relative overflow-hidden p-6 md:p-8">
               {/* Plus corner decorations */}
               <PlusIcons corners={["top-right", "bottom-left"]} />
 
