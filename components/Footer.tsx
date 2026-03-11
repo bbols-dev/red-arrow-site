@@ -11,7 +11,7 @@ const FOOTER_LINKS = {
   ],
   Company: [
     { label: "About", href: "#" },
-    { label: "Contact", href: "mailto:hello@redarrow.dev" },
+    { label: "Contact", href: "mailto:hello@suitproof.com" },
     { label: "Privacy Policy", href: "#" },
   ],
 };
@@ -29,16 +29,15 @@ export default function Footer() {
             <a href="#" className="flex items-center gap-2.5 no-underline mb-4">
               <div className="w-7 h-7 rounded-[var(--radius-card)] bg-primary flex items-center justify-center shadow-sm">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                 </svg>
               </div>
               <span className="text-base font-semibold tracking-tight text-text">
-                Red Arrow
+                SuitProof
               </span>
             </a>
             <p className="text-sm text-text-tertiary leading-relaxed">
-              Compliance monitoring for e-commerce brands that want to stay ahead
-              of regulatory risk.
+              Lawsuit protection for Shopify stores. Find your risk, fix it fast.
             </p>
           </div>
 
@@ -65,7 +64,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-border">
           <p className="text-xs text-text-tertiary">
-            © {new Date().getFullYear()} Red Arrow. All rights reserved.
+            © {new Date().getFullYear()} SuitProof. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-xs text-text-tertiary hover:text-primary transition-colors no-underline">

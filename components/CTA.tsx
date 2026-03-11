@@ -37,7 +37,7 @@ export default function CTA() {
                 Start Free Scan
               </a>
               <a
-                href="mailto:hello@redarrow.dev"
+                href="mailto:hello@suitproof.com"
                 className="btn border border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
               >
                 Talk to Us

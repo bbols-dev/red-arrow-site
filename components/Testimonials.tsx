@@ -3,7 +3,7 @@ import PlusIcons from "./PlusIcons";
 const TESTIMONIALS = [
   {
     quote:
-      "A competitor got hit with an ADA demand letter and we panicked. Red Arrow found 12 issues on our store — we fixed the critical ones that same afternoon. Huge peace of mind.",
+      "A competitor got hit with an ADA demand letter and we panicked. SuitProof found 12 issues on our store — we fixed the critical ones that same afternoon. Huge peace of mind.",
     name: "Sarah Chen",
     title: "Head of E-Commerce, Bloom Naturals",
     rating: 5,

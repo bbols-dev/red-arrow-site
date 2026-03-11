@@ -19,11 +19,11 @@ export default function Navbar() {
         <a href="#" className="flex items-center gap-2.5 no-underline">
           <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center shadow-sm">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
           </div>
           <span className="text-[17px] font-semibold tracking-tight text-text">
-            Red Arrow
+            SuitProof
           </span>
         </a>
 

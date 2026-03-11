@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Red Arrow — Compliance Monitoring for E-Commerce",
+  title: "SuitProof — Lawsuit Protection for Shopify Stores",
   description:
-    "Automated compliance scanning for Shopify stores. Detect regulatory risks, get actionable fixes, and stay ahead of enforcement — before it costs you.",
+    "Scan your Shopify store for the compliance gaps that get brands sued. ADA, FTC, CCPA, Prop 65 — find your risk and fix it before a plaintiff does.",
 };
 
 export default function RootLayout({
