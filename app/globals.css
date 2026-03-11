@@ -1,0 +1,345 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Colors ─────────────────────────────────────────── */
+  --color-primary: #C9544D;
+  --color-primary-light: #D4716B;
+  --color-primary-lighter: #F5E0DE;
+  --color-primary-bg: #FDF5F4;
+  --color-secondary: #9B8FD4;
+  --color-secondary-light: #EDE9FA;
+  --color-green: #3DAA64;
+  --color-green-light: #E6F5EC;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F8F6F4;
+  --color-surface-glass: rgba(255, 255, 255, 0.72);
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-strong: rgba(0, 0, 0, 0.14);
+  --color-text: #1A1A1A;
+  --color-text-secondary: #555555;
+  --color-text-tertiary: #888888;
+
+  /* ── Typography ─────────────────────────────────────── */
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+
+  /* ── Spacing & Layout ───────────────────────────────── */
+  --container-max: 1260px;
+  --section-padding: 120px;
+  --radius-pill: 50px;
+  --radius-card: 0.4rem;
+  --radius-sm: 10px;
+
+  /* ── Webflow-derived glass tokens ───────────────────── */
+  --glass-blur: 40px;
+  --glass-blur-sm: 15px;
+}
+
+/* ── Base ──────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-surface);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Component Styles — adapted from Webflow template
+   ═══════════════════════════════════════════════════════ */
+@layer components {
+  /* ── Accent font ──────────────────────────────────────── */
+  .font-accent {
+    font-family: var(--font-serif);
+    font-style: italic;
+  }
+
+  /* ── Glass card (primary)  ─── Webflow: .glas-card ──── */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.52);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.6);
+    backdrop-filter: blur(var(--glass-blur)) saturate(1.6);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: var(--radius-card);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.06),
+      0 1px 2px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.68);
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.08),
+      0 4px 12px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    transform: translateY(-2px);
+  }
+
+  /* ── Glass strong (navbar)  — Webflow: .navbar-component ── */
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.78);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.8);
+    backdrop-filter: blur(var(--glass-blur)) saturate(1.8);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  /* ── Glass pill (eyebrows, badges)  — Webflow: .support-wrapper ── */
+  .glass-pill {
+    background: rgba(255, 255, 255, 0.55);
+    -webkit-backdrop-filter: blur(var(--glass-blur-sm)) saturate(1.4);
+    backdrop-filter: blur(var(--glass-blur-sm)) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  }
+
+  /* ── Feature card (white base)  — Webflow: .features-card ── */
+  .feature-card-solid {
+    background: #ffffff;
+    border-radius: var(--radius-card);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .feature-card-solid:hover {
+    box-shadow:
+      0 16px 48px rgba(0, 0, 0, 0.07),
+      0 4px 12px rgba(0, 0, 0, 0.03);
+    transform: translateY(-2px);
+  }
+
+  /* ── Process number circle  — Webflow: .process-number ── */
+  .process-number {
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+    background-color: rgba(201, 84, 77, 0.08);
+    border-radius: 100%;
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-style: italic;
+    color: var(--color-primary);
+  }
+
+  /* ── Plus icon corner decorations  — Webflow: .plus-icon ── */
+  .plus-icon {
+    position: absolute;
+    z-index: 3;
+    opacity: 0.15;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+    color: var(--color-text);
+  }
+
+  /* Four corner positions */
+  .plus-icon.top-left { inset: 16px auto auto 16px; }
+  .plus-icon.top-right { inset: 16px 16px auto auto; }
+  .plus-icon.bottom-left { inset: auto auto 16px 16px; }
+  .plus-icon.bottom-right { inset: auto 16px 16px auto; }
+
+  /* ── Circle decoration  — Webflow: .circle-shape ── */
+  .circle-decoration {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.12;
+    pointer-events: none;
+    filter: blur(1px);
+  }
+
+  .circle-decoration.deco-primary {
+    background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+  }
+
+  .circle-decoration.deco-secondary {
+    background: radial-gradient(circle, var(--color-secondary) 0%, transparent 70%);
+  }
+
+  .circle-decoration.deco-green {
+    background: radial-gradient(circle, var(--color-green) 0%, transparent 70%);
+  }
+
+  /* ── Grow bar  — Webflow: .grow-bar ── */
+  .grow-bar {
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    background-color: rgba(201, 84, 77, 0.12);
+    border-radius: 100px;
+    width: 100%;
+    height: 10px;
+  }
+
+  .grow-bar.filled {
+    background-color: var(--color-primary);
+  }
+
+  /* ── Gradient text ────────────────────────────────────── */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ── Section divider ──────────────────────────────────── */
+  .section-alt {
+    background-color: var(--color-surface-alt);
+  }
+
+  /* ── Gradient orbs (background decorations) ───────────── */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(80px);
+  }
+
+  .orb-primary {
+    background: radial-gradient(circle, rgba(201, 84, 77, 0.18) 0%, rgba(201, 84, 77, 0) 70%);
+  }
+
+  .orb-secondary {
+    background: radial-gradient(circle, rgba(155, 143, 212, 0.15) 0%, rgba(155, 143, 212, 0) 70%);
+  }
+
+  .orb-green {
+    background: radial-gradient(circle, rgba(61, 170, 100, 0.1) 0%, rgba(61, 170, 100, 0) 70%);
+  }
+
+  /* ── Button base ──────────────────────────────────────── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: var(--radius-pill);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 4px 16px rgba(201, 84, 77, 0.25);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-primary-light);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(201, 84, 77, 0.3);
+  }
+
+  .btn-outline {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--color-text);
+    border: 1px solid var(--color-border-strong);
+  }
+  .btn-outline:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  /* ── Container ────────────────────────────────────────── */
+  .container-main {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  /* ── Sticky process cards — Webflow: .work-process-card ── */
+  @media (min-width: 768px) {
+    .sticky-card {
+      position: sticky;
+      margin-bottom: 30px;
+    }
+    .sticky-card:nth-child(1) { top: 120px; }
+    .sticky-card:nth-child(2) { top: 180px; }
+    .sticky-card:nth-child(3) { top: 240px; }
+    .sticky-card:nth-child(4) { top: 300px; }
+  }
+}
+
+/* ── Animations ───────────────────────────────────────── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 4s ease-in-out infinite;
+  }
+
+  .animate-scroll {
+    animation: scroll 40s linear infinite;
+  }
+
+  .animate-delay-1 { animation-delay: 0.1s; }
+  .animate-delay-2 { animation-delay: 0.2s; }
+  .animate-delay-3 { animation-delay: 0.3s; }
+  .animate-delay-4 { animation-delay: 0.4s; }
+}
