@@ -1,4 +1,5 @@
 import PlusIcons from "./PlusIcons";
+import Image from "next/image";
 
 const STEPS = [
   {
@@ -11,6 +12,7 @@ const STEPS = [
         <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
       </svg>
     ),
+    illustration: "/illustrations/laptop.svg",
   },
   {
     num: "02",
@@ -22,6 +24,7 @@ const STEPS = [
         <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
       </svg>
     ),
+    illustration: "/illustrations/browser.svg",
   },
   {
     num: "03",
@@ -33,6 +36,7 @@ const STEPS = [
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
       </svg>
     ),
+    illustration: "/illustrations/media-doc.svg",
   },
   {
     num: "04",
@@ -44,6 +48,7 @@ const STEPS = [
         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
       </svg>
     ),
+    illustration: "/illustrations/growth.svg",
   },
 ];
 
@@ -53,6 +58,10 @@ export default function HowItWorks() {
       {/* Background orbs */}
       <div className="orb orb-secondary w-[400px] h-[400px] top-[20%] -right-[100px]" />
       <div className="orb orb-primary w-[300px] h-[300px] bottom-[20%] -left-[80px]" />
+
+      {/* Decorative glass rings */}
+      <div className="glass-ring w-[200px] h-[200px] top-[15%] left-[8%] opacity-20" />
+      <div className="glass-ring w-[120px] h-[120px] bottom-[25%] right-[12%] opacity-15" />
 
       <div className="container-main relative">
         {/* Section header */}
@@ -68,17 +77,29 @@ export default function HowItWorks() {
           </h2>
         </div>
 
-        {/* Sticky card stack — Webflow: .work-process-card with sticky positioning */}
+        {/* Sticky card stack */}
         <div className="max-w-[720px] mx-auto">
           {STEPS.map((step) => (
-            <div key={step.num} className="sticky-card glass-card relative overflow-hidden p-8 md:p-10">
+            <div key={step.num} className="sticky-card glass-card glass-mesh relative overflow-hidden p-8 md:p-10">
               {/* Plus corner decorations */}
               <PlusIcons corners={["top-right", "bottom-left"]} />
 
-              <div className="relative z-1">
+              {/* SVG illustration watermark */}
+              <div className="glass-icon-wrap -bottom-[10px] -right-[10px] w-[140px] h-[140px] md:w-[160px] md:h-[160px]">
+                <Image
+                  src={step.illustration}
+                  alt=""
+                  width={160}
+                  height={160}
+                  className="w-full h-full object-contain"
+                  aria-hidden="true"
+                />
+              </div>
+
+              <div className="relative z-[2]">
                 {/* Top row: process number circle + step label */}
                 <div className="flex items-center gap-5 mb-6">
-                  {/* Process number — Webflow: .process-number (60×60, Playfair italic) */}
+                  {/* Process number */}
                   <div className="process-number">
                     {step.num}
                   </div>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;stroke:#231F20;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st1{fill:#231F20;}
+	.st2{fill:#FFFFFF;stroke:#231F20;stroke-width:6;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#231F20;stroke-width:6;stroke-miterlimit:10;}
+	.st4{fill:#231F20;stroke:#231F20;stroke-width:6;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-width:6;stroke-miterlimit:10;}
+	.st6{fill:#FFFFFF;}
+	.st7{fill:#231F20;stroke:#231F20;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st8{fill:none;stroke:#231F20;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:10.0852,20.1704;}
+	.st9{fill:none;stroke:#FFFFFF;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	.st10{fill:none;stroke:#231F20;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+	
+		.st11{fill:none;stroke:#231F20;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:10,20;}
+</style>
+<g>
+	<path class="st0" d="M442,472H58c-16.6,0-30-13.4-30-30V58c0-16.6,13.4-30,30-30h384c16.6,0,30,13.4,30,30v384
+		C472,458.6,458.6,472,442,472z"/>
+	<rect x="131" y="-9" transform="matrix(-1.836970e-16 1 -1 -1.836970e-16 430 -70)" class="st0" width="238" height="378"/>
+	<g>
+		<line class="st3" x1="60.8" y1="369.2" x2="60.8" y2="402.2"/>
+		<line class="st3" x1="439.2" y1="369.2" x2="439.2" y2="402.2"/>
+		<line class="st3" x1="60.8" y1="385.7" x2="439.2" y2="385.7"/>
+		<path class="st4" d="M389.6,322.5h-40.9c-3.8,0-6.9,3.1-6.9,6.9v112.5c0,3.8,3.1,6.9,6.9,6.9h40.9c3.8,0,6.9-3.1,6.9-6.9V329.4
+			C396.5,325.6,393.4,322.5,389.6,322.5z"/>
+	</g>
+</g>
+</svg>

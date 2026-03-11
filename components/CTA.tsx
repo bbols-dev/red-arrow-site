@@ -5,14 +5,16 @@ export default function CTA() {
     <section className="py-[var(--section-padding)]">
       <div className="container-main">
         <div className="relative rounded-[var(--radius-card)] overflow-hidden bg-gradient-to-br from-primary via-primary to-primary-light px-8 py-20 md:px-16 text-center text-white">
-          {/* Glass background circles — Webflow decorations */}
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-white/[0.06] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-white/[0.06] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
-          <div className="absolute top-1/2 left-1/4 w-[200px] h-[200px] rounded-full bg-white/[0.03] -translate-y-1/2 pointer-events-none" />
+          {/* Glass background circles */}
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-white/[0.07] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-white/[0.07] translate-y-1/2 -translate-x-1/2 pointer-events-none" />
+          <div className="absolute top-1/2 left-1/4 w-[200px] h-[200px] rounded-full bg-white/[0.04] -translate-y-1/2 pointer-events-none" />
+          <div className="absolute top-[30%] right-[30%] w-[120px] h-[120px] rounded-full bg-white/[0.03] pointer-events-none" />
 
-          {/* Frosted glass accent shapes — Webflow .glas-card on colored bg */}
-          <div className="absolute top-10 right-[10%] w-20 h-20 rounded-[var(--radius-card)] bg-white/[0.07] backdrop-blur-sm border border-white/[0.1] rotate-12 pointer-events-none" />
-          <div className="absolute bottom-10 left-[8%] w-16 h-16 rounded-[var(--radius-card)] bg-white/[0.07] backdrop-blur-sm border border-white/[0.1] -rotate-12 pointer-events-none" />
+          {/* Frosted glass accent shapes */}
+          <div className="absolute top-10 right-[10%] w-20 h-20 rounded-[var(--radius-card)] bg-white/[0.08] backdrop-blur-sm border border-white/[0.12] rotate-12 pointer-events-none" />
+          <div className="absolute bottom-10 left-[8%] w-16 h-16 rounded-[var(--radius-card)] bg-white/[0.08] backdrop-blur-sm border border-white/[0.12] -rotate-12 pointer-events-none" />
+          <div className="absolute top-[55%] right-[5%] w-10 h-10 rounded-lg bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] rotate-45 pointer-events-none" />
 
           {/* Plus icon corners — Webflow style */}
           <PlusIcons

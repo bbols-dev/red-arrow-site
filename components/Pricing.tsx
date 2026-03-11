@@ -64,6 +64,10 @@ export default function Pricing() {
       <div className="orb orb-primary w-[500px] h-[500px] top-[20%] -right-[150px]" />
       <div className="orb orb-secondary w-[400px] h-[400px] bottom-[10%] -left-[100px]" />
 
+      {/* Decorative glass rings */}
+      <div className="glass-ring w-[150px] h-[150px] top-[12%] left-[10%] opacity-15" />
+      <div className="glass-ring w-[80px] h-[80px] bottom-[20%] right-[8%] opacity-20" />
+
       <div className="container-main relative">
         {/* Header */}
         <div className="text-center max-w-[600px] mx-auto mb-12">
@@ -116,7 +120,7 @@ export default function Pricing() {
               className={`relative overflow-hidden p-8 transition-all duration-300 ${
                 plan.popular
                   ? "rounded-[var(--radius-card)] bg-gradient-to-br from-primary to-primary-light text-white shadow-2xl shadow-primary/20 scale-[1.03] z-10"
-                  : "glass-card"
+                  : "glass-card glass-mesh"
               }`}
             >
               {/* Plus icons */}
@@ -125,9 +129,10 @@ export default function Pricing() {
               )}
               {plan.popular && (
                 <>
-                  {/* Glass shapes inside popular card — Webflow .glas-card decorations */}
-                  <div className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full bg-white/[0.06] -translate-y-1/3 translate-x-1/3 pointer-events-none" />
-                  <div className="absolute bottom-0 left-0 w-[150px] h-[150px] rounded-full bg-white/[0.06] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+                  {/* Glass shapes inside popular card */}
+                  <div className="absolute top-0 right-0 w-[200px] h-[200px] rounded-full bg-white/[0.08] -translate-y-1/3 translate-x-1/3 pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 w-[150px] h-[150px] rounded-full bg-white/[0.08] translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+                  <div className="absolute top-[40%] right-[10%] w-[80px] h-[80px] rounded-full bg-white/[0.04] pointer-events-none" />
                   <PlusIcons corners={["top-right", "bottom-left"]} className="text-white opacity-20" />
                 </>
               )}
@@ -138,7 +143,7 @@ export default function Pricing() {
                 </div>
               )}
 
-              <div className="relative z-1">
+              <div className="relative z-[2]">
                 <h3 className="text-lg font-semibold mb-1">{plan.name}</h3>
                 <p
                   className={`text-sm mb-6 ${plan.popular ? "text-white/70" : "text-text-tertiary"}`}
@@ -164,6 +169,9 @@ export default function Pricing() {
                     </span>
                   )}
                 </div>
+
+                {/* Glass divider */}
+                <div className={`glass-line mb-6 ${plan.popular ? "opacity-30" : "opacity-60"}`} />
 
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature) => (

@@ -63,61 +63,170 @@
 
   /* ── Glass card (primary)  ─── Webflow: .glas-card ──── */
   .glass-card {
-    background: rgba(255, 255, 255, 0.52);
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.6);
-    backdrop-filter: blur(var(--glass-blur)) saturate(1.6);
-    border: 1px solid rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.38);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.8);
+    backdrop-filter: blur(var(--glass-blur)) saturate(1.8);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: var(--radius-card);
     box-shadow:
       0 8px 32px rgba(0, 0, 0, 0.06),
       0 1px 2px rgba(0, 0, 0, 0.04),
-      inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      inset 0 1px 0 rgba(255, 255, 255, 0.65),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.15);
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .glass-card:hover {
-    background: rgba(255, 255, 255, 0.68);
+    background: rgba(255, 255, 255, 0.58);
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.09),
+      0 4px 12px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+  }
+
+  /* ── Glass card tinted — colored glass variant ──────── */
+  .glass-card-tinted {
+    background: rgba(255, 255, 255, 0.28);
+    -webkit-backdrop-filter: blur(50px) saturate(2);
+    backdrop-filter: blur(50px) saturate(2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius-card);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card-tinted:hover {
+    background: rgba(255, 255, 255, 0.42);
+    transform: translateY(-2px);
     box-shadow:
       0 16px 48px rgba(0, 0, 0, 0.08),
-      0 4px 12px rgba(0, 0, 0, 0.04),
-      inset 0 1px 0 rgba(255, 255, 255, 0.85);
-    transform: translateY(-2px);
+      inset 0 1px 0 rgba(255, 255, 255, 0.7),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.15);
   }
 
   /* ── Glass strong (navbar)  — Webflow: .navbar-component ── */
   .glass-strong {
-    background: rgba(255, 255, 255, 0.78);
-    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.8);
-    backdrop-filter: blur(var(--glass-blur)) saturate(1.8);
-    border: 1px solid rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.72);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.9);
+    backdrop-filter: blur(var(--glass-blur)) saturate(1.9);
+    border: 1px solid rgba(255, 255, 255, 0.6);
     box-shadow:
-      0 4px 24px rgba(0, 0, 0, 0.05),
+      0 4px 24px rgba(0, 0, 0, 0.06),
+      0 1px 3px rgba(0, 0, 0, 0.03),
       inset 0 1px 0 rgba(255, 255, 255, 0.9);
   }
 
   /* ── Glass pill (eyebrows, badges)  — Webflow: .support-wrapper ── */
   .glass-pill {
-    background: rgba(255, 255, 255, 0.55);
-    -webkit-backdrop-filter: blur(var(--glass-blur-sm)) saturate(1.4);
-    backdrop-filter: blur(var(--glass-blur-sm)) saturate(1.4);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    background: rgba(255, 255, 255, 0.45);
+    -webkit-backdrop-filter: blur(var(--glass-blur-sm)) saturate(1.5);
+    backdrop-filter: blur(var(--glass-blur-sm)) saturate(1.5);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    box-shadow:
+      0 2px 12px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
   }
 
-  /* ── Feature card (white base)  — Webflow: .features-card ── */
-  .feature-card-solid {
-    background: #ffffff;
+  /* ── Glass surface — subtle frosted panel ── */
+  .glass-surface {
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(30px) saturate(1.4);
+    backdrop-filter: blur(30px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: var(--radius-card);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  }
+
+  /* ── Feature card (glass)  — Webflow: .features-card ── */
+  .feature-card-solid {
+    background: rgba(255, 255, 255, 0.45);
+    -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.7);
+    backdrop-filter: blur(var(--glass-blur)) saturate(1.7);
+    border-radius: var(--radius-card);
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    box-shadow:
+      0 4px 24px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.6);
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .feature-card-solid:hover {
+    background: rgba(255, 255, 255, 0.62);
     box-shadow:
-      0 16px 48px rgba(0, 0, 0, 0.07),
-      0 4px 12px rgba(0, 0, 0, 0.03);
-    transform: translateY(-2px);
+      0 20px 60px rgba(0, 0, 0, 0.08),
+      0 4px 12px rgba(0, 0, 0, 0.03),
+      inset 0 1px 0 rgba(255, 255, 255, 0.85);
+    transform: translateY(-3px);
+  }
+
+  /* ── Glass icon container — for SVG illustration backgrounds ── */
+  .glass-icon-wrap {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.06;
+    transition: opacity 0.35s ease;
+  }
+
+  .group:hover .glass-icon-wrap,
+  *:hover > .glass-icon-wrap {
+    opacity: 0.1;
+  }
+
+  /* ── Glass mesh — subtle grid overlay ── */
+  .glass-mesh {
+    position: relative;
+  }
+
+  .glass-mesh::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .glass-mesh:hover::before {
+    opacity: 1;
+  }
+
+  /* ── Glass shimmer — animated highlight streak ── */
+  .glass-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .glass-shimmer::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.08),
+      transparent
+    );
+    transition: left 0.6s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .glass-shimmer:hover::after {
+    left: 100%;
   }
 
   /* ── Process number circle  — Webflow: .process-number ── */
@@ -159,9 +268,9 @@
   .circle-decoration {
     position: absolute;
     border-radius: 50%;
-    opacity: 0.12;
+    opacity: 0.14;
     pointer-events: none;
-    filter: blur(1px);
+    filter: blur(2px);
   }
 
   .circle-decoration.deco-primary {
@@ -221,6 +330,26 @@
 
   .orb-green {
     background: radial-gradient(circle, rgba(61, 170, 100, 0.1) 0%, rgba(61, 170, 100, 0) 70%);
+  }
+
+  /* ── Glass ring — hollow frosted circle decoration ── */
+  .glass-ring {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.05);
+  }
+
+  /* ── Glass line — thin frosted divider ── */
+  .glass-line {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    );
   }
 
   /* ── Button base ──────────────────────────────────────── */

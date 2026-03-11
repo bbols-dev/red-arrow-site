@@ -83,8 +83,8 @@ export default function Testimonials() {
               key={t.name}
               className={`relative overflow-hidden p-8 flex flex-col ${
                 t.featured
-                  ? "feature-card-solid"
-                  : "glass-card"
+                  ? "feature-card-solid glass-shimmer"
+                  : "glass-card glass-shimmer"
               }`}
             >
               {/* Plus icons at two corners — Webflow pattern */}
